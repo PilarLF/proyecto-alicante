@@ -1,0 +1,94 @@
+@use '../variables' as *;
+@use '../mixins' as *;  
+
+// ====================================
+// Section - Barcelona Site
+// ====================================
+
+.section {
+  margin-bottom: $spacing-4xl;
+  animation: fadeIn 0.8s ease-out;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &__title {
+    position: relative;
+    display: flex;
+    gap: $spacing-md;
+    align-items: center;
+    padding-bottom: $spacing-md;
+    margin-bottom: $spacing-xl;
+    font-size: $font-size-3xl;
+    color: $color-primary;
+    border-bottom: $border-width-heavy solid $color-primary;
+
+    i {
+      font-size: $font-size-2xl;
+      color: $color-primary;
+    }
+
+    &::after {
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 80px;
+      height: 4px;
+      content: '';
+      background: $gradient-primary;
+      border-radius: $border-radius-full;
+    }
+  }
+
+  &__text {
+    margin-bottom: $spacing-lg;
+    font-size: $font-size-lg;
+    line-height: $line-height-relaxed;
+    color: $color-text-secondary;
+  }
+
+  // Modificador para secciones destacadas
+  &--highlight {
+    padding: $spacing-3xl;
+    margin-right: -$spacing-xl;
+    margin-left: -$spacing-xl;
+    background: $color-gray-100;
+    border-radius: $border-radius-lg;
+
+    @include respond-to(xs) {
+      padding: $spacing-2xl $spacing-lg;
+      margin-right: -$spacing-lg;
+      margin-left: -$spacing-lg;
+    }
+  }
+
+  // Responsive
+  @include respond-to(xs) {
+    margin-bottom: $spacing-3xl;
+
+    &__title {
+      flex-wrap: wrap;
+      font-size: $font-size-2xl;
+
+      i {
+        font-size: $font-size-xl;
+      }
+    }
+
+    &__text {
+      font-size: $font-size-base;
+    }
+  }
+}
+
+// Animación
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

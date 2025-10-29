@@ -1,0 +1,97 @@
+@use '../variables' as *;
+@use '../mixins' as *;  
+
+// ====================================
+// Footer - Barcelona Site
+// ====================================
+
+.footer {
+  padding: $spacing-3xl $spacing-xl;
+  margin-top: $spacing-4xl;
+  color: $color-black;
+  text-align: center;
+  background: $color-secondary;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-xl;
+    align-items: center;
+    max-width: $container-max-width-lg;
+    margin: 0 auto;
+  }
+
+  &__text {
+    display: flex;
+    gap: $spacing-sm;
+    align-items: center;
+    margin: 0;
+    font-size: $font-size-lg;
+
+    i {
+      color: $color-black;
+      animation: heartBeat 1.5s infinite;
+    }
+  }
+
+  &__social {
+    display: flex;
+    gap: $spacing-lg;
+    align-items: center;
+  }
+
+  &__social-link {
+    width: 45px;
+    height: 45px;
+    font-size: $font-size-xl;
+    color: $color-white;
+
+    // background: alpha($color-white, 0.1);
+    border-radius: $border-radius-full;
+
+    @include flex-center;
+
+    // @include transition(background-color, transform, color);
+
+    &:hover {
+      color: $color-white;
+      background: $color-primary;
+      transform: translateY(-3px) scale(1.1);
+    }
+
+    &:focus-visible {
+      outline: $border-width-thick solid $color-white;
+      outline-offset: 3px;
+    }
+  }
+
+  // Responsive
+  @include respond-to(xs) {
+    padding: $spacing-2xl $spacing-lg;
+
+    &__text {
+      font-size: $font-size-base;
+    }
+
+    &__social-link {
+      width: 40px;
+      height: 40px;
+      font-size: $font-size-lg;
+    }
+  }
+}
+
+// Animación del corazón
+@keyframes heart-beat {
+  0%, 100% {
+    transform: scale(1);
+  }
+
+  10%, 30% {
+    transform: scale(1.2);
+  }
+
+  20%, 40% {
+    transform: scale(1);
+  }
+}

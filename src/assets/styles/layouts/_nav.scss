@@ -1,0 +1,132 @@
+@use '../variables' as *;
+@use '../functions' as *; 
+@use '../mixins' as *;  
+
+// ====================================
+// Navigation - Barcelona Site
+// ====================================
+
+.nav {
+  top: 0;
+  background: $color-white;
+  box-shadow: $shadow-base;
+
+  // use a concrete z-index value or uncomment the function if defined
+  z-index: 1000;
+
+  &__container {
+    max-width: $container-max-width-xl;
+    padding: $spacing-md $spacing-xl;
+    margin: 0 auto;
+  }
+
+  &__logo {
+    display: flex;
+    gap: $spacing-sm;
+    align-items: center;
+    font-size: $font-size-2xl;
+    font-weight: $font-weight-bold;
+    color: $color-primary;
+    text-decoration: none;
+
+    i {
+      font-size: $font-size-xl;
+    }
+
+    &:hover {
+      color: $color-primary-dark;
+      transform: scale(1.05);
+    }
+
+    &-img {
+      display: block;
+      width: 120px; 
+      height: auto; 
+    }
+  }
+
+  &__menu {
+    display: flex;
+    gap: $spacing-xl;
+    align-items: center;
+  }
+
+  &__link {
+    display: flex;
+    gap: $spacing-sm;
+    align-items: center;
+    padding: $spacing-sm $spacing-md;
+    font-weight: $font-weight-medium;
+    color: $color-text-primary;
+    text-decoration: none;
+    border-radius: $border-radius-base;
+
+    i {
+      font-size: $font-size-lg;
+    }
+
+    &:hover {
+      color: $color-primary;
+      background-color: alpha($color-primary, 0.1);
+    }
+
+    &:focus-visible {
+      outline: $border-width-thick solid $color-primary;
+      outline-offset: 2px;
+    }
+  }
+
+  &__toggle {
+    display: none;
+    padding: $spacing-sm;
+    font-size: $font-size-2xl;
+    color: $color-text-primary;
+    cursor: pointer;
+    background: none;
+    border: none;
+    border-radius: $border-radius-base;
+
+    &:hover {
+      color: $color-primary;
+      background-color: $color-gray-100;
+    }
+
+    &:focus-visible {
+      @include focus-visible;
+    }
+  }
+
+  // Responsive
+  @include respond-to(xs) {
+    &__menu {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      left: 0;
+      display: none;
+      flex-direction: column;
+      gap: $spacing-md;
+      padding: $spacing-md $spacing-xl;
+      background: $color-white;
+      box-shadow: $shadow-lg;
+
+      &--active {
+        display: flex;
+      }
+    }
+
+    &__link {
+      justify-content: flex-start;
+      width: 100%;
+      padding: $spacing-md;
+
+      span {
+        flex: 1;
+      }
+    }
+
+    &__toggle {
+      display: block;
+    }
+  }
+}

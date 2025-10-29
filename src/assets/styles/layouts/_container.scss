@@ -1,0 +1,16 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+// ====================================
+// Container - Barcelona Site
+// ====================================
+
+.container {
+  max-width: $container-max-width-lg;
+  padding: $spacing-3xl $spacing-xl;
+  margin: 0 auto;
+
+  @include respond-to(xs) {
+    padding: $spacing-2xl $spacing-lg;
+  }
+}

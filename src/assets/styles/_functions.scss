@@ -1,0 +1,126 @@
+// ====================================
+// Functions - Barcelona Site
+// ====================================
+
+// Función para convertir px a rem
+// @function rem($pixels, $base: 16) {
+//   @return #{$pixels / $base}rem;
+// }
+
+// // Función para convertir px a em
+// @function em($pixels, $context: 16) {
+//   @return #{$pixels / $context}em;
+// }
+
+// // Función para obtener un valor de espaciado
+// @function spacing($multiplier) {
+//   @return $spacing-md * $multiplier;
+// }
+
+// // Función para aclarar un color
+// @function tint($color, $percentage) {
+//   @return mix($color-white, $color, $percentage);
+// }
+
+// // Función para oscurecer un color
+// @function shade($color, $percentage) {
+//   @return mix($color-black, $color, $percentage);
+// }
+
+// Función para obtener un color con opacidad
+@function alpha($color, $opacity) {
+  @return rgba($color, $opacity);
+}
+
+// // Función para calcular contraste de texto
+// @function text-contrast($background) {
+//   $lightness: lightness($background);
+  
+//   @if $lightness > 50 {
+//     @return $color-text-primary;
+//   } @else {
+//     @return $color-white;
+//   }
+// }
+
+// // Función para escalar fuente de forma fluida
+// @function fluid-size($min-size, $max-size, $min-viewport: 320px, $max-viewport: 1200px) {
+//   $slope: ($max-size - $min-size) / ($max-viewport - $min-viewport);
+//   $y-intercept: $min-size - ($slope * $min-viewport);
+  
+//   @return clamp(#{$min-size}, #{$y-intercept} + #{$slope * 100vw}, #{$max-size});
+// }
+
+// Función para obtener el z-index de un componente
+// @function z-index($key) {
+//   $z-indexes: (
+//     'dropdown': $z-index-dropdown,
+//     'sticky': $z-index-sticky,
+//     'fixed': $z-index-fixed,
+//     'modal-backdrop': $z-index-modal-backdrop,
+//     'modal': $z-index-modal,
+//     'popover': $z-index-popover,
+//     'tooltip': $z-index-tooltip
+//   );
+  
+//   @return map-get($z-indexes, $key);
+// }
+
+// // Función para calcular el tamaño de grid
+// @function grid-width($columns, $total-columns: 12, $gap: $spacing-lg) {
+//   $column-width: calc((100% - (#{$total-columns - 1} * #{$gap})) / #{$total-columns});
+//   @return calc((#{$column-width} * #{$columns}) + (#{$gap} * #{$columns - 1}));
+// }
+
+// // Función para crear sombras más suaves o intensas
+// @function shadow($intensity: 1) {
+//   $base-shadow: 0 2px 5px;
+//   $shadow-color: rgba($color-black, 0.1 * $intensity);
+  
+//   @return $base-shadow $shadow-color;
+// }
+
+// // Función para obtener un breakpoint
+// @function breakpoint($name) {
+//   $breakpoints: (
+//     'xs': $breakpoint-xs,
+//     'sm': $breakpoint-sm,
+//     'md': $breakpoint-md,
+//     'lg': $breakpoint-lg,
+//     'xl': $breakpoint-xl,
+//     'xxl': $breakpoint-xxl
+//   );
+  
+//   @return map-get($breakpoints, $name);
+// }
+
+// // Función para strip units (quitar unidades)
+// @function strip-unit($value) {
+//   @return $value / ($value * 0 + 1);
+// }
+
+// // Función para obtener el mayor valor
+// @function max($numbers...) {
+//   $max: nth($numbers, 1);
+  
+//   @each $number in $numbers {
+//     @if $number > $max {
+//       $max: $number;
+//     }
+//   }
+  
+//   @return $max;
+// }
+
+// // Función para obtener el menor valor
+// @function min($numbers...) {
+//   $min: nth($numbers, 1);
+  
+//   @each $number in $numbers {
+//     @if $number < $min {
+//       $min: $number;
+//     }
+//   }
+  
+//   @return $min;
+// }

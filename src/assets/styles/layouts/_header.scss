@@ -1,0 +1,125 @@
+@use '../variables' as *;
+@use '../mixins' as *;  
+
+// ====================================
+// Header - Barcelona Site
+// ====================================
+
+.header {
+  position: relative;
+  min-height: 400px;
+  padding: $header-padding $spacing-xl;
+  overflow: hidden; // Efecto parallax background
+  color: $color-white;
+  text-align: center;
+
+  // Imagen de fondo con overlay de gradiente
+  // background-image: linear-gradient(rgb(102 126 234 / 70%), rgb(118 75 162 / 70%)), 
+  //                   url('../images/alicante.jpg');
+  background-image: url('../images/header.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  @include flex-center;
+
+  // Efecto de overlay sutil
+  &::before {
+    z-index: 1;
+    content: '';
+    background: $gradient-overlay;
+
+    @include absolute-full;
+  }
+
+  &__content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+
+    // animation: fadeInUp 1s ease-out;
+  }
+
+  &__title {
+    margin-bottom: $spacing-md;
+    font-size: $font-size-5xl;
+    font-weight: $font-weight-extrabold;
+    color: $color-white;
+    letter-spacing: -0.02em;
+    text-shadow: 0 2px 10px rgba($color-black, 0.3);
+  }
+
+  &__subtitle {
+    margin-bottom: $spacing-2xl;
+    font-size: $font-size-xl;
+    font-weight: $font-weight-normal;
+    line-height: $line-height-relaxed;
+    opacity: 0.95;
+  }
+
+  &__cta {
+    padding: $spacing-md $spacing-2xl;
+    font-size: $font-size-lg;
+    font-weight: $font-weight-semibold;
+    color: $color-primary;
+    background: $color-white;
+    box-shadow: $shadow-lg;
+
+    i {
+      animation: bounce 2s infinite;
+    }
+
+    &:hover {
+      background: $color-gray-100;
+      box-shadow: $shadow-xl;
+    }
+  }
+
+  // Responsive
+  @include respond-to(xs) {
+    min-height: 300px;
+    padding: $header-padding-mobile $spacing-lg;
+
+    &__title {
+      font-size: $font-size-3xl;
+    }
+
+    &__subtitle {
+      margin-bottom: $spacing-xl;
+      font-size: $font-size-base;
+    }
+
+    &__cta {
+      padding: $spacing-md $spacing-xl;
+      font-size: $font-size-base;
+    }
+  }
+}
+
+// Animaciones
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+
+  40% {
+    transform: translateY(-10px);
+  }
+
+  60% {
+    transform: translateY(-5px);
+  }
+}

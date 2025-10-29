@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Descubre Alicante - Ciudad de arquitectura, cultura y mar mediterráneo">
+    <title>Alicante - Una Ciudad por Descubrir</title>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> -->
+    <link rel="stylesheet" href="./assets/styles/main.scss">
+</head>
+<body>
+  <!-- Header Content --> 
+
+    <nav class="nav">
+        <div class="nav__container">
+            <a href="#" class="nav__logo">
+                <!-- <i class="fas fa-city"></i>
+                Alicante -->
+              <img src="./assets/images/logo-alicante.png" alt="Logo Alicante" class="nav__logo-img" />
+            </a>
+            <!-- revisar, no funciona el toggle -->
+            <button class="nav__toggle" aria-label="Toggle menu" id="navToggle">     
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav__menu" id="navMenu">
+                <li class="nav__item">
+                    <a href="#inicio" class="nav__link">
+                        <i class="fas fa-home"></i>
+                        <span>Inicio</span>
+                    </a>
+                </li>
+                <li class="nav__item">
+                    <a href="#por-que" class="nav__link">
+                        <i class="fas fa-question-circle"></i>
+                        <span>Por qué visitar</span>
+                    </a>
+                </li>
+                <li class="nav__item">
+                    <a href="#lugares" class="nav__link">
+                        <i class="fas fa-map-marked-alt"></i>
+                        <span>Lugares</span>
+                    </a>
+                </li>
+                <li class="nav__item">
+                    <a href="#info" class="nav__link">
+                        <i class="fas fa-info-circle"></i>
+                        <span>Información</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+<header class="header">
+    <section class="header" id="inicio">
+            <div class="header__content">
+                <h1 class="header__title">Alicante</h1>
+                <p class="header__subtitle">Ciudad de arquitectura, cultura y mar</p>
+                <a href="#lugares" class="header__cta">
+                    Explorar <i class="fas fa-arrow-down"></i>
+                </a>
+            </div>
+    </section>
+</header>
+
+  <!-- Main Content --> 
+    <main class="container">
+        <section class="section" id="por-que">
+            <h2 class="section__title">
+                <i class="fas fa-heart"></i>
+                ¿Por qué visitar Alicante?
+            </h2>
+            <p class="section__text">
+                Alicante es una ciudad única que combina historia milenaria con modernidad vibrante. 
+                Desde el Castillo de Santa Bárbara hasta las playas mediterráneas, esta ciudad valenciana 
+                ofrece experiencias inolvidables para todo tipo de visitantes.
+            </p>
+        </section>
+
+        <section class="section section--highlight" id="lugares">
+            <h2 class="section__title">
+                <i class="fas fa-landmark"></i>
+                Lugares imprescindibles
+            </h2>
+            <div class="places">
+                <article class="place">
+                    <div class="place__icon">
+                        <i class="fa-solid fa-camera"></i>
+                    </div>
+                    <h3 class="place__name">Castillo de Santa Bárbara</h3>
+                    <p class="place__description">
+                        Visita el mejor mirador del mar y la ciudad desde esta fortaleza histórica.
+                    </p>
+                </article>
+
+                <article class="place">
+                    <div class="place__icon">
+                        <i class="fa-solid fa-island-tropical"></i>
+                    </div>
+                    <h3 class="place__name">Isla de Tabarca</h3>
+                    <p class="place__description">
+                        Pasa un día explorando la única isla habitada de la Comunidad Valenciana.
+                    </p>
+                </article>
+
+                <article class="place">
+                    <div class="place__icon">
+                        <i class="fa-solid fa-umbrella-beach"></i>
+                    </div>
+                    <h3 class="place__name">Playas</h3>
+                    <p class="place__description">
+                        Te mostramos las mejores playas urbanas y cercanas para disfrutar del sol y el mar.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <section class="hero" id="hero-que-ver">
+                <div class="hero__content">
+                    <h1 class="hero__title">¿Qué ver?</h1>
+                    <p class="hero__subtitle">Visita estos rincones</p>
+                    <a href="#lugares" class="hero__cta">
+                      <i class="fas fa-arrow-down"></i>
+                    </a>
+                </div>
+        </section>
+
+        
+        <section class="section section--highlight" id="info">
+            <h2 class="section__title">
+                <i class="fas fa-clipboard-list"></i>
+                Información práctica
+            </h2>
+            <ul class="info-list">
+                <li class="info-list__item">
+                    <i class="fas fa-language"></i>
+                    <strong>Idioma:</strong> Catalán y Español
+                </li>
+                <li class="info-list__item">
+                    <i class="fas fa-cloud-sun"></i>
+                    <strong>Clima:</strong> Mediterráneo, con inviernos suaves y veranos cálidos
+                </li>
+                <li class="info-list__item">
+                    <i class="fas fa-calendar-alt"></i>
+                    <strong>Mejor época:</strong> Primavera y otoño
+                </li>
+                <li class="info-list__item">
+                    <i class="fas fa-bus"></i>
+                    <strong>Transporte:</strong> Metro, bus y bicicleta
+                </li>
+                <li class="info-list__item">
+                    <i class="fas fa-euro-sign"></i>
+                    <strong>Moneda:</strong> Euro (€)
+                </li>
+                <li class="info-list__item">
+                    <i class="fas fa-clock"></i>
+                    <strong>Zona horaria:</strong> CET (UTC+1)
+                </li>
+            </ul>
+        </section>
+    </main>  
+  <script src="./assets/scripts/main.js" type="module"></script>
+
+<!-- Footer Content -->
+    <footer class="footer">
+        <div class="footer__content">
+            <p class="footer__text">
+                <i class="fas fa-heart"></i>
+                Barcelona te espera | 2025
+            </p>
+            <div class="footer__social">
+                <a href="#" class="footer__social-link" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" class="footer__social-link" aria-label="Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" class="footer__social-link" aria-label="Facebook">
+                    <i class="fab fa-facebook"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
