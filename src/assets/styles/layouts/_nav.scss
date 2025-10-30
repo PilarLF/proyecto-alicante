@@ -7,14 +7,16 @@
 // ====================================
 
 .nav {
+  position: relative;
   top: 0;
   background: $color-white;
   box-shadow: $shadow-base;
-
-  // use a concrete z-index value or uncomment the function if defined
   z-index: 1000;
 
   &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     max-width: $container-max-width-xl;
     padding: $spacing-md $spacing-xl;
     margin: 0 auto;
@@ -28,6 +30,7 @@
     font-weight: $font-weight-bold;
     color: $color-primary;
     text-decoration: none;
+    z-index: 1002;
 
     i {
       font-size: $font-size-xl;
@@ -49,6 +52,13 @@
     display: flex;
     gap: $spacing-xl;
     align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    list-style: none;
   }
 
   &__link {
@@ -60,6 +70,7 @@
     color: $color-text-primary;
     text-decoration: none;
     border-radius: $border-radius-base;
+    transition: all 0.3s ease;
 
     i {
       font-size: $font-size-lg;
@@ -67,7 +78,7 @@
 
     &:hover {
       color: $color-primary;
-      background-color: alpha($color-primary, 0.1);
+      background-color: rgba($color-primary, 0.1);
     }
 
     &:focus-visible {
@@ -78,6 +89,8 @@
 
   &__toggle {
     display: none;
+    position: relative;
+    z-index: 1002;
     padding: $spacing-sm;
     font-size: $font-size-2xl;
     color: $color-text-primary;
@@ -85,19 +98,25 @@
     background: none;
     border: none;
     border-radius: $border-radius-base;
+    transition: all 0.3s ease;
+    pointer-events: auto;
 
     &:hover {
       color: $color-primary;
       background-color: $color-gray-100;
     }
 
-    &:focus-visible {
-      @include focus-visible;
+    &:active {
+      transform: scale(0.95);
     }
   }
 
-  // Responsive
-  @include respond-to(xs) {
+  // Responsive - Media query para móviles (hasta 768px)
+  @media (max-width: 768px) {
+    &__toggle {
+      display: block !important;
+    }
+
     &__menu {
       position: absolute;
       top: 100%;
@@ -105,28 +124,34 @@
       left: 0;
       display: none;
       flex-direction: column;
-      gap: $spacing-md;
-      padding: $spacing-md $spacing-xl;
+      gap: 0;
+      padding: 0;
       background: $color-white;
       box-shadow: $shadow-lg;
+      z-index: 1001;
 
       &--active {
-        display: flex;
+        display: flex !important;
+      }
+    }
+
+    &__item {
+      width: 100%;
+      border-bottom: 1px solid $color-gray-200;
+
+      &:last-child {
+        border-bottom: none;
       }
     }
 
     &__link {
       justify-content: flex-start;
       width: 100%;
-      padding: $spacing-md;
+      padding: $spacing-md $spacing-xl;
 
       span {
         flex: 1;
       }
-    }
-
-    &__toggle {
-      display: block;
     }
   }
 }
