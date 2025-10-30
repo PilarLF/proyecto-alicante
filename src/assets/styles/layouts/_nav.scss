@@ -3,7 +3,7 @@
 @use '../mixins' as *;  
 
 // ====================================
-// Navigation - Barcelona Site
+// Navigation 
 // ====================================
 
 .nav {
@@ -113,6 +113,10 @@
 
   // Responsive - Media query para móviles (hasta 768px)
   @media (max-width: 768px) {
+    &__container {
+      position: relative;
+    }
+
     &__toggle {
       display: block !important;
     }
@@ -122,7 +126,7 @@
       top: 100%;
       right: 0;
       left: 0;
-      display: none;
+      display: none !important; // Oculto por defecto
       flex-direction: column;
       gap: 0;
       padding: 0;
@@ -131,7 +135,7 @@
       z-index: 1001;
 
       &--active {
-        display: flex !important;
+        display: flex !important; // Visible cuando está activo
       }
     }
 
