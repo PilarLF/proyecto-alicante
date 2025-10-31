@@ -112,7 +112,7 @@
   }
 
   // Responsive - Media query para móviles (hasta 768px)
-  @media (max-width: 768px) {
+  @media (width <= 768px) {
     &__container {
       position: relative;
     }
