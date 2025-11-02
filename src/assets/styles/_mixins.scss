@@ -1,7 +1,7 @@
 @use 'variables' as *;
 
 // ====================================
-// Mixins - Barcelona Site
+// Mixins
 // ====================================
 
 // Responsive breakpoints
@@ -29,15 +29,6 @@
   }
 }
 
-// Transiciones
-// @mixin transition($properties...) {$transitions
-  
-//   @each $property in $properties {
-//     $transitions: append($transitions, $property $transition-base $transition-ease, comma);$transitions$transitions
-//   }
-  
-//   transition: $transitions;transitiontransition
-// }
 
 // Flexbox
 @mixin flex-center {
@@ -46,23 +37,6 @@
   justify-content: center;
 }
 
-// @mixin flex-between {justify-content
-//   align-items: center;align-itemsalign-items
-// }
-
-// @mixin flex-column {display
-//   flex-direction: column;flex-directionflex-direction
-// }
-
-// Grid
-// @mixin grid-auto($min-width, $gap: $spacing-lg) {grid-template-columns
-//   gap: $gap;gapgap
-// }
-
-// // Posicionamiento
-// @mixin absolute-center {left
-//   transform: translate(-50%, -50%);transformtransform
-// }
 
 @mixin absolute-full {
   position: absolute;
@@ -72,84 +46,6 @@
   height: 100%;
 }
 
-// Truncate text
-// @mixin truncate {text-overflow
-//   white-space: nowrap;white-spacewhite-space
-// }
-
-// @mixin line-clamp($lines) {-webkit-box-orient
-//   overflow: hidden;overflowoverflow
-// }
-
-// // Botones
-// @mixin button-base {border-radius
-//   cursor: pointer;cursorcursor
-// //   @include transition(background-color, color, transform, box-shadow);
-  
-//   &:hover {
-//     transform: translateY(-2px);transformtransform
-//   }
-  
-//   &:active {
-//     transform: translateY(0);transformtransform
-//   }
-// }
-
-// @mixin button-primary {background
-// //   color: $color-white;colorcolor
-  
-// //   &:hover {
-// //     box-shadow: $shadow-lg;box-shadowbox-shadow
-// //   }
-// }
-
-// Tarjetas
-// @mixin card {box-shadow
-//   padding: $spacing-lg;paddingpadding
-//   @include transition(transform, box-shadow);
-  
-//   &:hover {transform
-//     box-shadow: $shadow-lg;box-shadowbox-shadow
-//   }
-// }
-
-// // Overlay
-// @mixin overlay($opacity: 0.5) {
-//   position: relative;positionposition
-  
-//   &::before {background
-//     z-index: 1;z-indexz-index
-//   }
-  
-//   > * {position
-//     z-index: 2;z-indexz-index
-//   }
-// }
-
-// // Reset de listas
-// @mixin list-reset {padding
-//   list-style: none;list-stylelist-style
-// }
-
-// // Clearfix
-// @mixin clearfix {
-//   &::after {display
-//     clear: both;clearclear
-//   }
-// }
-
-// // Aspect ratio
-// @mixin aspect-ratio($width, $height) {
-//   position: relative;positionposition
-  
-//   &::before {display
-//     padding-bottom: percentage($height / $width);padding-bottompadding-bottom
-//   }
-  
-//   > * {
-//     @include absolute-full;
-//   }
-// }
 
 // Focus visible
 @mixin focus-visible {
@@ -157,36 +53,3 @@
 //     outline-offset: 2px;outline-offsetoutline-offset
 //   }
 }
-
-// Hover lift effect
-// @mixin hover-lift($distance: -5px) {
-//   @include transition(transform, box-shadow);
-  
-//   &:hover {transform
-//     box-shadow: $shadow-lg;box-shadowbox-shadow
-//   }
-// }
-
-// // Gradiente de texto
-// @mixin text-gradient($gradient) {background-clip
-//   -webkit-text-fill-color: transparent;-webkit-text-fill-color-webkit-text-fill-color
-// }
-
-// Scrollbar personalizado
-// @mixin custom-scrollbar($width: 8px, $track-color: $color-gray-200, $thumb-color: $color-primary) {
-//   &::-webkit-scrollbar {
-//     width: $width;widthwidth
-//   }
-  
-//   &::-webkit-scrollbar-track {
-//     background: $track-color;backgroundbackground
-//   }
-  
-//   &::-webkit-scrollbar-thumb {background
-//     border-radius: $border-radius-full;border-radiusborder-radius
-    
-//     &:hover {
-//       background: darken($thumb-color, 10%);backgroundbackground
-//     }
-//   }
-// }
